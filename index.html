@@ -589,13 +589,13 @@ body {
   <br>
   <br>
   <h3 style="color: #ffffff" title="不定时刷新">方舟服务器</h3>
-  <span id="content" style="color: #ffffff">43.139.118.231</span>
-  <button id="copyBT" class="btn btn-danger btn-sm" title="地址">复制</button>
+  <span id="content1" style="color: #ffffff">43.139.118.231</span>
+  <button id="copyBT1" class="btn btn-danger btn-sm" title="地址">复制</button>
   <br>
   <br>
   <h3 style="color: #ffffff" title="不定时刷新">梯子</h3>
-  <span id="content" style="color: #ffffff">https://raw.fastgit.org/freefq/free/master/v2</span>
-  <button id="copyBT" class="btn btn-danger btn-sm" title="网页地址">复制</button>
+  <span id="content2" style="color: #ffffff">https://raw.fastgit.org/freefq/free/master/v2</span>
+  <button id="copyBT2" class="btn btn-danger btn-sm" title="网页地址">复制</button>
 </div>
 <div class="wrapper">
 
@@ -670,5 +670,35 @@ body {
 
   document.getElementById('copyBT').addEventListener('click', copyArticle, false);
 </script>
+  
+  <script>
+  function copyArticle(event) {
+    const range = document.createRange();
+    range.selectNode(document.getElementById('content1'));
 
+    const selection = window.getSelection();
+    if(selection.rangeCount > 0) selection.removeAllRanges();
+    selection.addRange(range);
+    document.execCommand('copy');
+    alert("复制成功！");
+  }
+
+  document.getElementById('copyBT1').addEventListener('click', copyArticle, false);
+</script>
+
+  <script>
+  function copyArticle(event) {
+    const range = document.createRange();
+    range.selectNode(document.getElementById('content2'));
+
+    const selection = window.getSelection();
+    if(selection.rangeCount > 0) selection.removeAllRanges();
+    selection.addRange(range);
+    document.execCommand('copy');
+    alert("复制成功！");
+  }
+
+  document.getElementById('copyBT2').addEventListener('click', copyArticle, false);
+</script>
+  
 </html>
